@@ -6,12 +6,12 @@ try:
             host="localhost", 
             user="root", 
             passwd="",
-            database="biblioteca"
+            database="gestion"
         )
         
         cursor = cnx.cursor()
         #cursor.execute("SHOW DATABASES")
-        cursor.execute("SELECT * FROM usuarios_1")
+        cursor.execute("SELECT * FROM usuarios;")
         for base in cursor:
             print(base)
         #cnx.closed
