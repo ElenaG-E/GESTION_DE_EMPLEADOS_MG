@@ -1,20 +1,22 @@
 import mysql.connector
-from mysql.connector import errorcode
 
-try:
-        cnx= mysql.connector.connect(
-            host="localhost", 
-            user="root", 
-            passwd="",
-            database="gestion"
-        )
-        
-        cursor = cnx.cursor()
-        #cursor.execute("SHOW DATABASES")
-        cursor.execute("SELECT * FROM usuarios;")
-        for base in cursor:
-            print(base)
-        #cnx.closed
+# Connect to server
+cnx = mysql.connector.connect(
+    host="localhost",
+    port=3306,
+    user="root",
+    password="",
+    database = "biblioteca")
 
-except mysql.connector.Error:
-      print("Ocurrió un error al conectar la base de datos")
+# Get a cursor
+cur = cnx.cursor()
+
+# Execute a query
+cur.execute("SELECT * FROM libro")
+
+# Fetch one result
+for filas in cur:
+    print(filas)
+
+# Close connection
+cnx.close()
