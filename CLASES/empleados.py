@@ -16,5 +16,5 @@ class Empleados:
         self.nom_usuario = nom_usuario
         self.password = password
     
-    def validar_Datos(self):
-        if len(self.id_rut) < 3 or 
+    def __str__(self):
+        return f"Empleado: {self.nombre} - Correo: {self.correo} - Fecha_Nac: {self.fecha_nac} - Telefono: {self.telefono}"
