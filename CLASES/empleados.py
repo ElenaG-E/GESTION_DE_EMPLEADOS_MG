@@ -18,12 +18,18 @@ class Empleados:
         self.id_rol = id_rol
         self.id_tipo = id_tipo
         self.nom_usuario = nom_usuario
-        self.password = password
+        self.password = self.Encriptar_clave(password)
     
-    def Encriptar_clave(self):
-        if self.password:
-            return self.cipher_suite.decrypt(self.password.encode().decode())
+    def Encriptar_clave(self, password):
+        if password:
+            return self.cipher_suite.encrypt(self.password.encode())
         return ""
+    
+    def Desencriptar_clave(self):
+        if self.password:
+            return self.cipher_suite.decrypt(self.password).decode()
+        return ""
+
         
     def Validar_datos(self):
         self.nombre = input("Ingresa el nombre del empleado: ")

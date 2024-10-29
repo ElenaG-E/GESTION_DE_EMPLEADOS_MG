@@ -1,12 +1,12 @@
 import mysql.connector
+from _mysql_connector import errorcode
 
 # Connect to server
-cnx = mysql.connector.connect(
-    host="localhost",
-    port=3306,
-    user="root",
-    password="",
-    database = "biblioteca")
+def generar_conexion():
+    config={
+        "user": user,
+        "password": password,
+    }
 
 # Get a cursor
 cur = cnx.cursor()
