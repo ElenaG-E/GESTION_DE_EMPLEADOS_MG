@@ -1,8 +1,8 @@
 from cryptography.fernet import Fernet
 import re
+from tipo_empleado import TipoEmpleados as id_tipo #Preguntar al profe porque se ve en verde
 
-class Empleados:
-
+class Empleados(id_tipo):
     clave = Fernet.generate_key()
     cipher_suite = Fernet(clave)
 
@@ -18,29 +18,24 @@ class Empleados:
         self.id_rol = id_rol
         self.id_tipo = id_tipo
         self.nom_usuario = nom_usuario
-        self.password = self.Encriptar_clave(password)
+        self.password = self.encriptar_clave(password)
     
-    def Encriptar_clave(self, password):
+    def encriptar_clave(self, password):
         if password:
-            return self.cipher_suite.encrypt(self.password.encode())
+            return self.cipher_suite.encrypt(password.encode())
         return ""
     
-    def Desencriptar_clave(self):
+    def desencriptar_clave(self):
         if self.password:
             return self.cipher_suite.decrypt(self.password).decode()
         return ""
 
-        
-    def Validar_datos(self):
-        self.nombre = input("Ingresa el nombre del empleado: ")
-        self.correo = input("Ingresa el correo: ")
-        self.fecha_nac = input("Ingresa fecha_nacimiento: ")
-        self.telefono= input("Ingresa el telefono: ")
-    
-    def __str__(self):
-        return f"Empleado: {self.nombre} - Correo: {self.correo} - Fecha_Nac: {self.fecha_nac} - Telefono: {self.telefono}"
+    def validar_datos(self):
+        # Valida datos básicos sin solicitar entrada
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", self.correo):
+            raise ValueError("Correo no válido.")
+        if not re.match(r"\d{9,15}", self.telefono):
+            raise ValueError("Teléfono no válido.")
 
-    def Encriptar_clave(self):
-        if self.password:
-            return self.cipher_suite.decrypt(self.password.encode().decode())
-        return ""
+    def __str__(self):
+        return f"Empleado: {self.nombre} - Correo: {self.correo} - Fecha Nac: {self.fecha_nac} - Teléfono: {self.telefono}"
