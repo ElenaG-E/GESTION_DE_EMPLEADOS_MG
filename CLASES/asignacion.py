@@ -1,7 +1,7 @@
 from departamento import Departamento as id_depto
 from empleados import Empleados as id_rut
 
-class Asignacion:
+class Asignacion(id_depto, id_rut):
     def __init__(self, id_asig, id_depto, id_rut):
         self.id_asig = id_asig  # Unique assignment ID
         self.id_depto = id_depto # Department ID
