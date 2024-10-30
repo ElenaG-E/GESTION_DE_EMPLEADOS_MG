@@ -2,6 +2,7 @@ from datetime import datetime
 import mysql.connector
 from mysql.connector import errorcode
 
+
 def generar_conexion(servidor, usuario, contrasena, base_datos):
     config = {
         'host': servidor,

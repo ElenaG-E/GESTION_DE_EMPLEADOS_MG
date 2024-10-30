@@ -1,7 +1,9 @@
 from cryptography.fernet import Fernet
 import re
-from prettytable import TableHandler
+from prettytable import prettytable
 from tipo_empleado import TipoEmpleados as id_tipo #seudonimo  #Preguntar al profe porque se ve en verde
+
+table = prettytable.PrettyTable()
 
 class Empleados(id_tipo):
     clave = Fernet.generate_key()
