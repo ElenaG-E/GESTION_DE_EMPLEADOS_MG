@@ -1,9 +1,6 @@
-from colorama import init, fore, style
 from datetime import datetime
 import mysql.connector
 from mysql.connector import errorcode
-
-init = (autoreset=True)
 
 def generar_conexion(servidor, usuario, contrasena, base_datos):
     config = {
@@ -59,6 +56,9 @@ def listado_empleados(servidor, usuario, contrasena, base_datos):
         print("No se pudo establecer la conexión a la base de datos.")
 
 # Ejemplo de uso
+
+
+
 listado_empleados("localhost", "root", "", "gestion_empleados_mg")
 
 def obtener_autor_seudonimo(servidor, usuario, contrasena, base_datos, seudonimo):

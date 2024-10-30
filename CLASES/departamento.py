@@ -1,7 +1,7 @@
-from empleados import Empleados as id_rut # Importa la clase Empleados sin alias
+from empleados import Empleados  # Importa la clase Empleados sin alias 
 
-class Departamento(id_rut):
-    def __init__(self, id_depto, nombre, id_rut):  # Corrige la sintaxis del constructor
+class Departamento(Empleados):
+    def __init__(self, id_depto = 0, nombre = '', id_rut = 0):  # Corrige la sintaxis del constructor
+        super().__init__(id_rut)  # Llama al constructor de la clase padre
         self.id_depto = id_depto
         self.nombre = nombre
-        self.id_rut = id_rut 

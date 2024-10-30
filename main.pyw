@@ -1,9 +1,10 @@
+TODO: 
 from DAL.db import generar_conexion
 from DAL.consultas_sql import 
 from DAL.db_autor import
 print("""
     Seleccione su Opción:
-    1.- Consultar Libros
+    1.- Consultar 
     2.- Consultar Editoriales
     3.- Consultar Autores
     """)

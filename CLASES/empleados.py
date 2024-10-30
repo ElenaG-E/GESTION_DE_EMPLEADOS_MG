@@ -1,12 +1,13 @@
 from cryptography.fernet import Fernet
 import re
-from tipo_empleado import TipoEmpleados as id_tipo #Preguntar al profe porque se ve en verde
+from prettytable import TableHandler
+from tipo_empleado import TipoEmpleados as id_tipo #seudonimo  #Preguntar al profe porque se ve en verde
 
 class Empleados(id_tipo):
     clave = Fernet.generate_key()
     cipher_suite = Fernet(clave)
 
-    def __init__(self, id_rut, nombre, fecha_nac, fecha_contrato, sueldo, correo, telefono, direccion, id_rol, id_tipo, nom_usuario, password):
+    def __init__(self, id_rut = 0, nombre = '', fecha_nac = '', fecha_contrato = '', sueldo = 0, correo = '', telefono = 0, direccion = '', id_rol = 0, id_tipo = 0, nom_usuario = '', password = ''):
         self.id_rut = id_rut
         self.nombre = nombre
         self.fecha_nac = fecha_nac
