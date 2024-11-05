@@ -9,7 +9,7 @@ class Empleados(TipoEmpleados):
     clave = Fernet.generate_key()
     cipher_suite = Fernet(clave)
 
-    def __init__(self, id_rut = 0, nombre = '', fecha_nac = '', fecha_contrato = '', sueldo = 0, correo = '', telefono = 0, direccion = '', id_rol = 0, id_tipo = 0, nom_usuario = '', password = ''):
+    def __init__(self, id_rut = 0, nombre = '', fecha_nac = '', fecha_contrato = '', sueldo = 0, correo = '', telefono = 0, direccion = '', id_rol = 0, id_tipo = 0, nom_usuario = '', password = '', habilitado = ''):
         self.id_rut = id_rut
         self.nombre = nombre
         self.fecha_nac = fecha_nac
@@ -22,6 +22,7 @@ class Empleados(TipoEmpleados):
         self.id_tipo = id_tipo
         self.nom_usuario = nom_usuario
         self.password = self.encriptar_clave(password)
+        self.habilitado = habilitado
     
     def encriptar_clave(self, password):
         if password:
