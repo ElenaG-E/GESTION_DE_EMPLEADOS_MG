@@ -1,11 +1,11 @@
 from cryptography.fernet import Fernet
 import re
 from prettytable import prettytable
-from tipo_empleado import TipoEmpleados as id_tipo #seudonimo  #Preguntar al profe porque se ve en verde
+from tipo_empleado import TipoEmpleados #seudonimo  #Preguntar al profe porque se ve en verde
 
 table = prettytable.PrettyTable()
 
-class Empleados(id_tipo):
+class Empleados(TipoEmpleados):
     clave = Fernet.generate_key()
     cipher_suite = Fernet(clave)
 
