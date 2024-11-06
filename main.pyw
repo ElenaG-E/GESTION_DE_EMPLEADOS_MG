@@ -77,3 +77,28 @@ class SistemGestionEmpleados:
 if __name__ == "__main__": 
     sistema= SistemGestionEmpleados() 
     sistema.menu() 
+
+    from empleados import Empleado
+from departamento import Departamento
+from proyecto import Proyecto
+from registro_tiempo import RegistroTiempo
+
+# Crear empleados
+empleado1 = Empleado(1, 'Juan Perez', '1985-07-23', '2020-01-15', 1500000, 'juan.perez@empresa.com', '123456789', 'Calle Falsa 123', 1, 'juanperez', 'password123')
+empleado2 = Empleado(2, 'Ana Lopez', '1990-04-17', '2021-03-10', 1800000, 'ana.lopez@empresa.com', '987654321', 'Avenida Siempre Viva 742', 2, 'analopez', 'password456')
+
+# Crear departamentos
+departamento1 = Departamento(1, 'Recursos Humanos', empleado1)
+
+# Crear proyectos
+proyecto1 = Proyecto(1, 'Proyecto Alfa', 'Descripción del Proyecto Alfa', '2023-01-01', '2023-12-31')
+
+# Crear registros de tiempo
+registro1 = RegistroTiempo(1, empleado1, '2023-01-01', 8, 'Descripción del trabajo', 0, 'Ninguna')
+
+# Mostrar información
+print(f'Departamento: {departamento1.nombre}')
+print(f'Empleado: {departamento1.empleado.nombre}, Correo: {departamento1.empleado.correo}')
+
+print(f'Proyecto: {proyecto1.nombre}')
+print(f'Empleado: {empleado2.nombre}, Correo: {empleado2.correo}')
