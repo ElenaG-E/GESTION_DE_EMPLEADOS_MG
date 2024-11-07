@@ -1,4 +1,4 @@
-from gestion.dal.db_emp import agregar_usuario, mostrar_empleados, eliminar_empleado
+from CLASES..db import agregar_usuario, mostrar_empleados, eliminar_empleado
 from gestion.dal.db_depto import agregar_departamento, actualizar_departamento, buscar_departamento, eliminar_departamento, mostrar_departamentos
 from gestion.dal.db_proyecto import crear_proyecto, actualizar_proyecto, eliminar_proyecto, mostrar_proyecto
 from gestion.clases.informe import generar_informes_pdf
